@@ -219,3 +219,22 @@ a.reseau:hover { background: var(--lime); border-color: var(--lime); color: var(
 }
 @media (max-width: 1000px), (max-height: 760px) { .disque--noir, .disque--up { font-size: 1rem; } }
 .brevo-formulaire { display: block; width: 100%; max-width: 560px; height: 380px; border: 3px solid var(--blanc); background: var(--blanc); margin: 1rem 0; }
+/* Inscription : choix formulaire ou QR code */
+.inscription-choix { display: grid; grid-template-columns: minmax(0, 1.5fr) auto minmax(0, 1fr); gap: 1.2rem; align-items: start; margin: 1rem 0; }
+.inscription-option h3 { font: 700 1.1rem var(--cond); text-transform: uppercase; letter-spacing: .04em; margin: 0 0 .6rem; display: flex; align-items: center; gap: .5rem; }
+.inscription-option h3::first-letter { font: inherit; color: inherit; }
+.option-num { display: inline-grid; place-items: center; width: 2rem; height: 2rem; border-radius: 50%; background: var(--bordeaux); color: var(--blanc); font: 400 1.1rem var(--slab); }
+.inscription-option .brevo-formulaire { margin: 0; max-width: none; }
+.inscription-ou { align-self: center; font: 400 1.6rem var(--slab); color: var(--lime); text-transform: uppercase; }
+.qr-code { display: block; width: 100%; max-width: 220px; height: auto; background: var(--blanc); padding: 8px; border: 3px solid var(--blanc); box-shadow: 6px 6px 0 var(--bordeaux); image-rendering: pixelated; }
+@media (max-width: 760px) {
+  .inscription-choix { grid-template-columns: 1fr; }
+  .inscription-ou { justify-self: center; }
+}
+/* Ressources : à imprimer */
+.imprimable { display: flex; flex-wrap: wrap; gap: 1.2rem; align-items: center; margin: 1rem 0 2rem; padding: 1.2rem; background: var(--blanc); color: var(--noir); border: 3px solid var(--noir); box-shadow: 7px 7px 0 var(--bordeaux); max-width: 42rem; }
+.imprimable img { width: 180px; height: 180px; image-rendering: pixelated; }
+.imprimable figcaption { flex: 1 1 16rem; display: flex; flex-direction: column; gap: .5rem; align-items: flex-start; }
+.imprimable strong { font: 700 1.3rem var(--cond); }
+#inscription { max-width: 58rem; }
+.inscription-option .brevo-formulaire { height: 420px; }
