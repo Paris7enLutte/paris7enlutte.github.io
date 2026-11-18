@@ -1,7 +1,13 @@
 # Une entrée par événement. Champs : date (AAAA-MM-JJ), heure, titre, type, lieu, description, lien.
 # « type » colore la carte : Assemblée générale, Rassemblement, Manifestation, Atelier...
 # Les événements passés basculent seuls dans la rubrique « Passé ».
-# Les deux entrées ci-dessous sont des EXEMPLES à remplacer.
+# Les entrées marquées « (exemple) » sont à remplacer ou supprimer.
+
+- date: 2026-11-20
+  heure: "12h"
+  titre: "Assemblée générale"
+  type: Assemblée générale
+  lieu: "Gymnase Sophie Germain"
 
 - date: 2026-12-03
   heure: "12h – 14h"
