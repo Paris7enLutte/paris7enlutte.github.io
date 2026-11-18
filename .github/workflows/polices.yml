@@ -1,0 +1,22 @@
+name: Installer les polices
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  polices:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: |
+          mkdir -p assets/polices /tmp/p && cd /tmp/p
+          for p in alfa-slab-one oswald archivo-narrow; do npm pack @fontsource/$p@5 >/dev/null; mkdir $p; tar xzf fontsource-$p-*.tgz -C $p; cp $p/package/LICENSE $GITHUB_WORKSPACE/assets/polices/OFL-$p.txt; done
+          D=$GITHUB_WORKSPACE/assets/polices
+          cp alfa-slab-one/package/files/alfa-slab-one-latin-400-normal.woff2 $D/alfa-slab-one.woff2
+          cp oswald/package/files/oswald-latin-500-normal.woff2 $D/oswald-500.woff2
+          cp oswald/package/files/oswald-latin-700-normal.woff2 $D/oswald-700.woff2
+          cp archivo-narrow/package/files/archivo-narrow-latin-400-normal.woff2 $D/archivo-narrow-400.woff2
+          cp archivo-narrow/package/files/archivo-narrow-latin-700-normal.woff2 $D/archivo-narrow-700.woff2
+          cd $GITHUB_WORKSPACE
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/polices && git commit -m "Polices libres (OFL) hébergées sur le site" && git push
