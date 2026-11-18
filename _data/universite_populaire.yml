@@ -1,0 +1,14 @@
+# Liens et lieux de la page Université populaire. Changer ici le formulaire ou le planning si besoin.
+formulaire: "https://framaforms.org/inscription-cours-universite-populaire-campus-grands-moulins-1793790207"
+planning: "https://sheet.zohopublic.eu/sheet/published/jzi1i6e2eae353cdb4c2db342aeab0ba531eb?zview=preview&proxyURL=preview"
+lieux:
+  - nom: "Béton Salon"
+    adresse: "9 esplanade Pierre Vidal-Naquet, Halle aux Farines, Paris 13e"
+  - nom: "L'Esplanade"
+    adresse: "8 esplanade Pierre Vidal-Naquet, Halle aux Farines, Paris 13e"
+  - nom: "Maison des Rêves et des Colères"
+    adresse: "12 rue Léo Frankel, Paris 13e"
+    note: "Matériel de projection. Indisponible le lundi."
+  - nom: "Gymnase Sophie Germain"
+    adresse: "Rue Watt, Paris 13e"
+    note: "Matériel de projection."

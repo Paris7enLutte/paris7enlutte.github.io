@@ -1,0 +1,12 @@
+# Réseaux sociaux du collectif, affichés sur la page À propos.
+# Renseigner « url » quand un compte existe ; sans url, le réseau apparaît comme « bientôt ».
+- nom: Instagram
+  url:
+- nom: Mastodon
+  url:
+- nom: Bluesky
+  url:
+- nom: Telegram
+  url:
+- nom: WhatsApp
+  url:

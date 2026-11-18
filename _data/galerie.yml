@@ -1,0 +1,9 @@
+# Galerie photo de la page Ressources.
+# 1. Déposer la photo dans assets/galerie/ (JPEG d'environ 1600 px de large, moins de 500 Ko).
+# 2. Ajouter une entrée ci-dessous, la plus récente en haut.
+# Avant publication : accord des personnes reconnaissables, ou visages floutés.
+#
+# - fichier: 2026-11-20-ag-gymnase.jpg
+#   legende: "Assemblée générale au gymnase Sophie Germain"
+#   date: 2026-11-20
+#   credit: "Photo : collectif"
