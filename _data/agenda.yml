@@ -1,23 +1,29 @@
 # Une entrée par événement. Champs : date (AAAA-MM-JJ), heure, titre, type, lieu, description, lien.
-# « type » colore la carte : Assemblée générale, Rassemblement, Manifestation, Atelier...
+# « type » colore la carte : Assemblée générale, Rassemblement, Manifestation, Atelier, Projection...
 # Les événements passés basculent seuls dans la rubrique « Passé ».
-# Les entrées marquées « (exemple) » sont à remplacer ou supprimer.
+
+- date: 2026-11-19
+  heure: "10h – 12h"
+  titre: "Les indignés à la grève générale pour le logement : retour sur 15 ans de mobilisation en Espagne"
+  type: Atelier
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Par Héloïse Nez."
+
+- date: 2026-11-19
+  heure: "14h30 – 16h30"
+  titre: "Coloriage secret, ou comment convaincre sans expliquer"
+  type: Atelier
+  lieu: "Maison des Rêves et des Colères, 12 rue Léo Frankel, Paris 13e"
+  description: "Par Emilie Larroque."
+
+- date: 2026-11-19
+  titre: "« La Société du spectacle » de Guy Debord"
+  type: Projection
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Présentée et discutée par Eric Dufour. Proposée par l'association Cinésept."
 
 - date: 2026-11-20
   heure: "12h"
   titre: "Assemblée générale"
   type: Assemblée générale
-  lieu: "Gymnase Sophie Germain"
-
-- date: 2026-12-03
-  heure: "12h – 14h"
-  titre: "Assemblée générale (exemple)"
-  type: Assemblée générale
-  lieu: "Lieu à préciser"
-  description: "Ordre du jour à compléter."
-
-- date: 2026-11-10
-  heure: "18h"
-  titre: "Rassemblement (exemple)"
-  type: Rassemblement
-  lieu: "Lieu à préciser"
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
