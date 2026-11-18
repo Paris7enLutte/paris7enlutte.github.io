@@ -218,3 +218,4 @@ a.reseau:hover { background: var(--lime); border-color: var(--lime); color: var(
   .disque { width: min(40vw, 230px); }
 }
 @media (max-width: 1000px), (max-height: 760px) { .disque--noir, .disque--up { font-size: 1rem; } }
+.brevo-formulaire { display: block; width: 100%; max-width: 560px; height: 380px; border: 3px solid var(--blanc); background: var(--blanc); margin: 1rem 0; }
