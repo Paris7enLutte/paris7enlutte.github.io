@@ -9,13 +9,14 @@
 </head>
 <body class="theme-{{ page.theme | default: 'papier' }} grain">
   <header class="bandeau">
+    <a class="marque" href="{{ '/' | relative_url }}"><b>P</b>aris 7 <b>E</b>n <b>L</b>utte</a>
     <nav>
       <a href="{{ '/ressources/' | relative_url }}">Ressources</a>
       <a href="{{ '/communiques/' | relative_url }}">Communiqués</a>
       <a href="{{ '/agenda/' | relative_url }}">Agenda</a>
       <a href="{{ '/a-propos/' | relative_url }}">À propos</a>
     </nav>
-    <a class="pastille" href="{{ '/' | relative_url }}" title="Accueil"><span>Accueil</span></a>
+    <a class="pastille" href="{{ '/' | relative_url }}" title="Accueil · {{ site.title }}"><img src="{{ '/assets/logo-paris-cite.png' | relative_url }}" alt="Accueil"></a>
   </header>
   <main class="contenu">
     {{ content }}
