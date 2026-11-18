@@ -14,8 +14,10 @@ permalink: /confidentialite/
 
 **Base légale** : le consentement, exprimé par la demande d'inscription (article 6.1.a du RGPD).
 
-**Conservation** : jusqu'à la désinscription. La liste est stockée sous forme chiffrée dans les secrets du dépôt GitHub qui sert à l'envoi ; elle n'est jamais publiée.
+**Sous-traitant** : l'inscription et l'envoi passent par Brevo (Sendinblue SAS, société française soumise au RGPD), qui conserve la liste des abonnés pour le compte du collectif. L'inscription n'est validée qu'après confirmation par courriel (double opt-in).
 
-**Mesure d'audience** : aucune. La lettre ne contient ni pixel espion ni lien traceur.
+**Conservation** : jusqu'à la désinscription. La liste n'est jamais publiée.
+
+**Mesure d'audience** : le collectif n'exploite pas de statistiques d'ouverture ou de clic à d'autres fins que le bon acheminement de la lettre. Le site lui-même n'utilise ni cookie ni outil de mesure d'audience.
 
 **Vos droits** : chaque numéro comporte un lien de désinscription. Vous pouvez à tout moment demander l'accès à vos données, leur rectification ou leur effacement en écrivant à {{ site.email_contact }}, et saisir la CNIL (cnil.fr) si vous estimez que vos droits ne sont pas respectés.

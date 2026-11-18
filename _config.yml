@@ -9,6 +9,9 @@ lang: fr
 # Adresse qui reçoit les demandes d'inscription et de désinscription.
 email_contact: "mob2026paris7@gmail.com"
 
+# Formulaire d'inscription Brevo (liste « Abonnés lettre »), affiché sur la page À propos.
+brevo_formulaire: "https://058ddbb0.sibforms.com/v2/serve/MUIFAGMRFokBcs61CWxdf4TGw4NX9h4DWdDmLx4wgKuIaXunQKP00JQx45B14oUAN4NYDDAbhiV8dgbRQ36hqkOCYyH71KFHieqp26OvdfwWqqRw0D1NZOXgAHXcPRH2jREc53tIllG9LxyDWOjjLfxIxc1klqZ2CP45J2I80kYiqgP6PSCQtePIocTH4HNP7NIATl2AX_Mz0G3gRg=="
+
 # Adresse publique du site, sans barre finale.
 # Adresse finale : https://paris7enlutte.github.io/
 url: "https://paris7enlutte.github.io"

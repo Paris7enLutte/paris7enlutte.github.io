@@ -11,9 +11,9 @@ theme: nuit
 
 <section id="inscription" class="encart">
   <h2>Recevoir la lettre</h2>
-  <p>L'inscription se fait par un simple courriel : le bouton ouvre votre messagerie avec un message prérempli, qu'il suffit d'envoyer.</p>
-  <p><a class="bouton" href="mailto:{{ site.email_contact }}?subject=Inscription%20%C3%A0%20la%20lettre&amp;body=Je%20souhaite%20recevoir%20la%20lettre%20d%27information%20%C3%A0%20cette%20adresse.">S'abonner par courriel</a></p>
-  <p class="petit">Adresse utilisée uniquement pour l'envoi de la lettre, désinscription depuis chaque numéro, aucun traceur. <a href="{{ '/confidentialite/' | relative_url }}">Données personnelles</a>.</p>
+  <p>Indiquez votre adresse ci-dessous, puis cliquez sur le lien du courriel de confirmation que vous recevrez : l'inscription n'est validée qu'après ce clic.</p>
+  <iframe class="brevo-formulaire" src="{{ site.brevo_formulaire }}" title="Formulaire d'inscription à la lettre" loading="lazy"></iframe>
+  <p class="petit">Adresse utilisée uniquement pour l'envoi de la lettre, désinscription en un clic depuis chaque numéro. Formulaire hébergé par Brevo. <a href="{{ '/confidentialite/' | relative_url }}">Données personnelles</a>. Le formulaire ne s'affiche pas ? <a href="{{ site.brevo_formulaire }}" target="_blank" rel="noopener">Ouvrir le formulaire</a>.</p>
 </section>
 
 ## Nous suivre
