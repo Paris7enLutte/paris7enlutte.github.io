@@ -16,6 +16,14 @@ theme: nuit
   <p class="petit">Adresse utilisée uniquement pour l'envoi de la lettre, désinscription depuis chaque numéro, aucun traceur. <a href="{{ '/confidentialite/' | relative_url }}">Données personnelles</a>.</p>
 </section>
 
+## Nous suivre
+
+<ul class="reseaux">
+{% for r in site.data.reseaux %}  <li>{% if r.url %}<a class="reseau" href="{{ r.url }}" target="_blank" rel="noopener me">{{ r.nom }}</a>{% else %}<span class="reseau reseau--bientot">{{ r.nom }} <small>bientôt</small></span>{% endif %}</li>
+{% endfor %}</ul>
+
+Les réseaux relaient les annonces ; tout reste consultable ici, sans compte.
+
 ## Contact
 
 Courriel : <a href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a>
