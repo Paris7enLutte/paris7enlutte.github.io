@@ -11,8 +11,19 @@ theme: nuit
 
 <section id="inscription" class="encart">
   <h2>Recevoir la lettre</h2>
-  <p>Indiquez votre adresse ci-dessous, puis cliquez sur le lien du courriel de confirmation que vous recevrez : l'inscription n'est validée qu'après ce clic.</p>
-  <iframe class="brevo-formulaire" src="{{ site.brevo_formulaire }}" title="Formulaire d'inscription à la lettre" loading="lazy"></iframe>
+  <p>Deux façons de s'inscrire, au choix. Dans les deux cas, l'inscription n'est validée qu'après un clic sur le lien du courriel de confirmation.</p>
+  <div class="inscription-choix">
+    <div class="inscription-option">
+      <h3><span class="option-num">1</span> Inscrire son adresse</h3>
+      <iframe class="brevo-formulaire" src="{{ site.brevo_formulaire }}" title="Formulaire d'inscription à la lettre" loading="lazy"></iframe>
+    </div>
+    <div class="inscription-ou" aria-hidden="true">ou</div>
+    <div class="inscription-option">
+      <h3><span class="option-num">2</span> Scanner le QR code</h3>
+      <img class="qr-code" src="{{ '/assets/qr-inscription.png' | relative_url }}" alt="QR code menant au formulaire d'inscription à la lettre" width="220" height="220">
+      <p class="petit">Avec l'appareil photo du téléphone : le formulaire d'inscription s'ouvre directement.</p>
+    </div>
+  </div>
   <p class="petit">Adresse utilisée uniquement pour l'envoi de la lettre, désinscription en un clic depuis chaque numéro. Formulaire hébergé par Brevo. <a href="{{ '/confidentialite/' | relative_url }}">Données personnelles</a>. Le formulaire ne s'affiche pas ? <a href="{{ site.brevo_formulaire }}" target="_blank" rel="noopener">Ouvrir le formulaire</a>.</p>
 </section>
 

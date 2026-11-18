@@ -21,6 +21,19 @@ Documents et numéros de la lettre, du plus récent au plus ancien. Pour les rec
 
 {% if site.posts.size == 0 %}<p>Le premier numéro paraîtra prochainement.</p>{% endif %}
 
+## À imprimer
+
+<div class="a-imprimer">
+  <figure class="imprimable">
+    <img src="{{ '/assets/qr-inscription.png' | relative_url }}" alt="QR code d'inscription à la lettre" width="180" height="180">
+    <figcaption>
+      <strong>QR code d'inscription à la lettre</strong>
+      <span>Pour affiches, tracts et diaporamas : il ouvre le formulaire d'inscription. Image haute définition (1104 × 1104 px), lisible jusqu'au format A3.</span>
+      <a class="bouton" href="{{ '/assets/qr-inscription.png' | relative_url }}" download="QR-inscription-lettre-Paris7EnLutte.png">Télécharger le QR code</a>
+    </figcaption>
+  </figure>
+</div>
+
 ## Galerie
 
 {% assign photos = site.data.galerie %}
