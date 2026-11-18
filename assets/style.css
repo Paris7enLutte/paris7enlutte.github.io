@@ -111,7 +111,7 @@ a.vignette:hover { transform: translate(-2px, -2px); }
 .evenement.evenement--manifestation { border-left: 14px solid var(--bleu); }
 .evenement.evenement--atelier { border-left: 14px solid var(--cyan); }
 .evenement.evenement--projection { border-left: 14px solid var(--chair); }
-#passe .evenement { opacity: .7; }
+.evenement--passe { opacity: .7; }
 
 /* Lettre et encarts */
 .lettre { max-width: 42rem; margin: 0 auto; background: var(--blanc); color: var(--noir); padding: 1.5rem 2rem 2rem; border: 3px solid var(--noir); box-shadow: 9px 9px 0 var(--bordeaux); }
@@ -124,3 +124,39 @@ a.vignette:hover { transform: translate(-2px, -2px); }
 .encart { margin: 2rem auto; max-width: 42rem; padding: 1.2rem 1.5rem; border: 3px solid currentColor; }
 .encart h2 { margin-top: 0; }
 .bouton { display: inline-block; padding: .6rem 1.3rem; background: var(--lime); color: var(--noir) !important; border: 3px solid var(--noir); box-shadow: 5px 5px 0 var(--bordeaux); border-radius: 999px; text-decoration: none; font: 700 1.05rem var(--cond); text-transform: uppercase; letter-spacing: .05em; }
+
+/* Agenda : onglets par mois et calendrier */
+.mois-onglets { display: flex; flex-wrap: wrap; gap: .4rem; margin: 1.5rem 0 1rem; }
+.onglet { font: 700 .95rem var(--cond); text-transform: uppercase; letter-spacing: .05em; padding: .5rem 1rem; border: 3px solid var(--noir); background: var(--blanc); color: var(--noir); cursor: pointer; box-shadow: 4px 4px 0 var(--noir); }
+.onglet--passe { opacity: .7; }
+.onglet[aria-selected="true"] { background: var(--lime); opacity: 1; transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--noir); }
+.onglet:focus-visible { outline: 3px solid var(--blanc); outline-offset: 2px; }
+.calendrier { background: var(--blanc); color: var(--noir); border: 3px solid var(--noir); box-shadow: 9px 9px 0 var(--noir); margin-bottom: 2rem; }
+.cal-tete, .cal-grille { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.cal-tete span { font: 700 .8rem var(--cond); text-transform: uppercase; letter-spacing: .08em; text-align: center; padding: .5rem 0; background: var(--noir); color: var(--blanc); }
+.cal-case { min-height: 6.5rem; padding: .35rem; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; display: flex; flex-direction: column; gap: .25rem; min-width: 0; }
+.cal-case:nth-child(7n) { border-right: 0; }
+.cal-vide { background: #f3f3f3; }
+.cal-passe .cal-num { opacity: .45; }
+.cal-num { font: 400 1.15rem/1 var(--slab); color: var(--bordeaux); }
+.cal-aujourdhui { background: #f7ecf1; }
+.cal-aujourdhui .cal-num { background: var(--bordeaux); color: var(--blanc); border-radius: 50%; width: 1.9rem; height: 1.9rem; display: grid; place-items: center; font-size: 1rem; }
+.cal-evt { --fond: #f4f4f4; display: block; font: 500 .78rem/1.2 var(--cond); padding: .25rem .35rem 0; border-bottom: .25rem solid var(--fond); border-left: 5px solid var(--bordeaux); background: var(--fond); color: var(--noir) !important; text-decoration: none; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
+.cal-evt:hover { --fond: var(--lime); }
+.cal-evt b { color: var(--bordeaux); }
+.cal-evt--assemblee-generale { border-left-color: var(--lime); }
+.cal-evt--rassemblement { border-left-color: var(--bleu-fonce); }
+.cal-evt--manifestation { border-left-color: var(--bleu); }
+.cal-evt--atelier { border-left-color: var(--cyan); }
+.cal-evt--projection { border-left-color: var(--chair); }
+.cal-passe .cal-evt { opacity: .6; }
+.evenement { scroll-margin-top: 1rem; }
+.evenement:target { outline: 4px solid var(--lime); }
+@media (max-width: 700px) {
+  .cal-case { min-height: 3.2rem; padding: .2rem; align-items: center; }
+  .cal-evt { font-size: 0; padding: 0; border-bottom: 0; width: .7rem; height: .7rem; border-left: 0; border-radius: 50%; background: var(--bordeaux); }
+  .cal-evt b { display: none; }
+  .cal-evt--assemblee-generale { background: var(--lime); } .cal-evt--atelier { background: var(--cyan); } .cal-evt--projection { background: var(--chair); }
+  .cal-evt--manifestation, .cal-evt--rassemblement { background: var(--bleu); }
+  .cal-tete span { font-size: .65rem; }
+}
