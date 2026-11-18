@@ -33,7 +33,8 @@ h1, h2 { font-family: var(--main); text-transform: uppercase; letter-spacing: .0
 .disque:hover, .disque:focus-visible { transform: scale(1.06) rotate(-3deg); }
 .disque--ocre { background-color: var(--jaune); }
 .disque--bleu { background-color: var(--gris); }
-.disque--rouge { background-color: var(--rose); }.evenement--projection { border-left: 12px solid var(--rose); }
+.disque--rouge { background-color: var(--rose); }
+.evenement.evenement--projection { border-left: 12px solid var(--rose); }
 
 .disque--noir { background-color: var(--blanc); font-size: clamp(.75rem, 1.3vw, 1.1rem); }
 .accueil-titre { position: absolute; right: 6%; bottom: 10%; max-width: 30rem; text-align: right; }
