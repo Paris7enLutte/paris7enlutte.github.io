@@ -1,0 +1,22 @@
+# Une entrée par document. Champs : titre, nature, annee, support, lien, langue, themes.
+# « nature » sert aux filtres de la page : Communiqué, Tract, Presse, Motion...
+# Les trois entrées ci-dessous sont des EXEMPLES à remplacer.
+
+- titre: "Communiqué (exemple)"
+  nature: Communiqué
+  annee: 2026
+  support: "Adopté en assemblée générale"
+  lien: "https://example.org"
+  themes: [Moyens, Conditions d'étude]
+
+- titre: "Tract (exemple)"
+  nature: Tract
+  annee: 2026
+  support: "Distribué sur le campus"
+  themes: [Mobilisation]
+
+- titre: "Article de presse (exemple)"
+  nature: Presse
+  annee: 2026
+  support: "Nom du média"
+  themes: [Revue de presse]
