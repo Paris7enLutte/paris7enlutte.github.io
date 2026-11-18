@@ -1,0 +1,39 @@
+# Réglages du site d'archives de la lettre d'information.
+# Modifiez les valeurs ci-dessous, puis enregistrez : GitHub Pages reconstruit le site seul.
+
+title: "Paris 7 En lutte"
+description: "Espace d'échange pour la communauté mobilisée de Paris 7."
+author: "Paris 7 En lutte"
+lang: fr
+
+# Adresse qui reçoit les demandes d'inscription et de désinscription.
+email_contact: "mob2026paris7@gmail.com"
+
+# Adresse publique du site, sans barre finale.
+# Adresse finale : https://paris7enlutte.github.io/
+url: "https://paris7enlutte.github.io"
+baseurl: ""
+
+permalink: /lettres/:year/:month/:title/
+timezone: Europe/Paris
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+feed:
+  path: feed.xml
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: lettre
+
+exclude:
+  - README.md
+  - scripts/
+  - Gemfile
+  - Gemfile.lock
+  - envois_test/
