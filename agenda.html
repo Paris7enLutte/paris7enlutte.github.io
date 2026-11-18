@@ -5,17 +5,16 @@ permalink: /agenda/
 theme: ocre
 ---
 <h1>Agenda</h1>
-<p>Assemblées générales, rassemblements, manifestations et ateliers. Les dates se complètent dans le fichier <code>_data/agenda.yml</code>.</p>
+<p>Assemblées générales, rassemblements, manifestations, ateliers et projections de la communauté mobilisée.</p>
 
-<h2>À venir</h2>
-<div id="a-venir" class="agenda"></div>
-<p id="rien" class="petit" hidden>Aucune date annoncée pour le moment.</p>
+<div class="mois-onglets" role="tablist" aria-label="Mois" hidden></div>
+<div id="calendrier" class="calendrier" hidden></div>
 
-<h2>Passé</h2>
-<div id="passe" class="agenda">
+<h2 id="liste-titre">Événements</h2>
+<div id="liste" class="agenda">
 {% assign evts = site.data.agenda | sort: "date" %}
 {% for e in evts %}
-  <article class="evenement evenement--{{ e.type | slugify: "latin" }}" data-date="{{ e.date }}">
+  <article id="evt-{{ forloop.index }}" class="evenement evenement--{{ e.type | slugify: "latin" }}" data-date="{{ e.date }}" data-titre="{{ e.titre | escape }}" data-heure="{{ e.heure }}" data-type="{{ e.type | slugify: "latin" }}">
     <div class="evenement-date">
       <span class="jour">{{ e.date | date: "%d" }}</span>
       <span class="mois">{{ e.date | date: "%m/%Y" }}</span>
@@ -29,16 +28,65 @@ theme: ocre
   </article>
 {% endfor %}
 </div>
+<p id="rien" class="petit" hidden>Aucun événement ce mois-ci.</p>
 
 <script>
-  (function () {
-    var aujourdhui = new Date().toISOString().slice(0, 10);
-    var venir = document.getElementById('a-venir'), passe = document.getElementById('passe');
-    Array.from(passe.children).forEach(function (e) {
-      if (e.dataset.date >= aujourdhui) venir.appendChild(e);
+(function () {
+  var MOIS = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  var JOURS = ['lun.','mar.','mer.','jeu.','ven.','sam.','dim.'];
+  var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+  var d = new Date(), aujourdhui = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+  var moisCourant = aujourdhui.slice(0, 7);
+  var liste = document.getElementById('liste'), cal = document.getElementById('calendrier');
+  var onglets = document.querySelector('.mois-onglets'), titre = document.getElementById('liste-titre');
+  var evts = Array.from(liste.querySelectorAll('.evenement'));
+  evts.forEach(function (e) { if (e.dataset.date < aujourdhui) e.classList.add('evenement--passe'); });
+
+  var mois = evts.map(function (e) { return e.dataset.date.slice(0, 7); });
+  for (var k = 0; k < 3; k++) { var x = new Date(d.getFullYear(), d.getMonth() + k, 1); mois.push(x.getFullYear() + '-' + pad(x.getMonth() + 1)); }
+  mois = mois.filter(function (m, i) { return mois.indexOf(m) === i; }).sort();
+  var nom = function (m) { return MOIS[+m.slice(5) - 1] + ' ' + m.slice(0, 4); };
+
+  function afficher(m) {
+    Array.from(onglets.children).forEach(function (b) {
+      var actif = b.dataset.mois === m;
+      b.setAttribute('aria-selected', actif); b.tabIndex = actif ? 0 : -1;
     });
-    var anciens = Array.from(passe.children).reverse();
-    anciens.forEach(function (e) { passe.appendChild(e); });
-    document.getElementById('rien').hidden = venir.children.length > 0;
-  })();
+    var annee = +m.slice(0, 4), mo = +m.slice(5) - 1;
+    var premier = (new Date(annee, mo, 1).getDay() + 6) % 7, nb = new Date(annee, mo + 1, 0).getDate();
+    var html = '<div class="cal-tete">' + JOURS.map(function (j) { return '<span>' + j + '</span>'; }).join('') + '</div><div class="cal-grille">';
+    for (var i = 0; i < premier; i++) html += '<div class="cal-case cal-vide"></div>';
+    for (var j = 1; j <= nb; j++) {
+      var date = m + '-' + pad(j), du = evts.filter(function (e) { return e.dataset.date === date; });
+      html += '<div class="cal-case' + (date === aujourdhui ? ' cal-aujourdhui' : '') + (du.length ? ' cal-occupe' : '') + (date < aujourdhui ? ' cal-passe' : '') + '"><span class="cal-num">' + j + '</span>';
+      du.forEach(function (e) {
+        html += '<a class="cal-evt cal-evt--' + e.dataset.type + '" href="#' + e.id + '">' + (e.dataset.heure ? '<b>' + e.dataset.heure.split(' ')[0] + '</b> ' : '') + e.dataset.titre + '</a>';
+      });
+      html += '</div>';
+    }
+    cal.innerHTML = html + '</div>';
+    var n = 0;
+    evts.forEach(function (e) { var v = e.dataset.date.slice(0, 7) === m; e.hidden = !v; if (v) n++; });
+    titre.textContent = 'Événements de ' + nom(m);
+    document.getElementById('rien').hidden = n > 0;
+    try { history.replaceState(null, '', '#' + m); } catch (err) {}
+  }
+
+  mois.forEach(function (m) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.setAttribute('role', 'tab'); b.dataset.mois = m;
+    b.className = 'onglet' + (m < moisCourant ? ' onglet--passe' : '');
+    b.textContent = nom(m);
+    b.addEventListener('click', function () { afficher(m); });
+    onglets.appendChild(b);
+  });
+  onglets.addEventListener('keydown', function (ev) {
+    var i = mois.indexOf(onglets.querySelector('[aria-selected=true]').dataset.mois);
+    if (ev.key === 'ArrowRight' && i < mois.length - 1) i++; else if (ev.key === 'ArrowLeft' && i > 0) i--; else return;
+    afficher(mois[i]); onglets.children[i].focus();
+  });
+  onglets.hidden = false; cal.hidden = false;
+  var demande = location.hash.slice(1);
+  afficher(mois.indexOf(demande) >= 0 ? demande : moisCourant);
+})();
 </script>
