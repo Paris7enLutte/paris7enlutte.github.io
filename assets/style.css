@@ -58,7 +58,7 @@ h1::first-letter, h2::first-letter { font-family: var(--slab); font-weight: 400;
 .accueil-abonner { font: 500 .95rem var(--cond); letter-spacing: .03em; }
 .accueil-abonner a { color: var(--lime); }
 .logo-univ { display: block; width: 92px; padding: 12px; background: var(--blanc); border-radius: 50%; margin-bottom: 1.2rem; box-shadow: 5px 5px 0 var(--bleu); }
-@media (max-width: 760px) {
+@media (max-width: 1000px), (max-height: 760px) {
   .disques { position: static; display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; padding: 2rem 1rem; }
   .disque { position: static; width: 40vw; }
   .accueil-titre { position: static; padding: 0 1.5rem 3rem; }
@@ -210,3 +210,11 @@ a.reseau:hover { background: var(--lime); border-color: var(--lime); color: var(
 .contenu a.vignette { color: var(--noir); }
 .up-formulaire iframe { width: min(1180px, calc(100vw - 2rem)); height: 2600px; margin-left: 50%; transform: translateX(-50%); }
 @media (max-width: 700px) { .up-formulaire iframe { height: 3200px; box-shadow: none; } }
+.disques { z-index: 2; pointer-events: none; }
+.disque { pointer-events: auto; }
+@media (max-width: 1000px), (max-height: 760px) {
+  .accueil { display: flex; flex-direction: column; }
+  .accueil-titre { order: -1; padding: 2rem 1.5rem 0; max-width: none; }
+  .disque { width: min(40vw, 230px); }
+}
+@media (max-width: 1000px), (max-height: 760px) { .disque--noir, .disque--up { font-size: 1rem; } }
