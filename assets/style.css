@@ -208,7 +208,7 @@ a.reseau:hover { background: var(--lime); border-color: var(--lime); color: var(
 .theme-up .bouton { background: var(--noir); color: var(--blanc) !important; }
 .theme-up .bouton--clair { background: var(--blanc); color: var(--noir) !important; }
 .contenu a.vignette { color: var(--noir); }
-.up-formulaire iframe { width: min(1180px, calc(100vw - 2rem)); height: 2600px; margin-left: 50%; transform: translateX(-50%); }
+.up-formulaire iframe { width: min(1180px, calc(100vw - 2rem)); height: 2600px; margin-left: calc(50% - min(590px, 50vw - 1rem)); }
 @media (max-width: 700px) { .up-formulaire iframe { height: 3200px; box-shadow: none; } }
 .disques { z-index: 2; pointer-events: none; }
 .disque { pointer-events: auto; }
@@ -238,3 +238,7 @@ a.reseau:hover { background: var(--lime); border-color: var(--lime); color: var(
 .imprimable strong { font: 700 1.3rem var(--cond); }
 #inscription { max-width: 58rem; }
 .inscription-option .brevo-formulaire { height: 420px; }
+/* Page introuvable (404) */
+.introuvable { text-align: center; padding: 3rem 0 2rem; }
+.introuvable-code { font: 400 clamp(6rem, 22vw, 13rem)/.9 var(--slab); color: var(--bordeaux); text-shadow: .06em .06em 0 var(--bleu); margin: 0; }
+.introuvable-liens { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; margin: 2rem 0 0; padding: 0; list-style: none; }
