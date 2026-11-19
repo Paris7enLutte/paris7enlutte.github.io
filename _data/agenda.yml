@@ -1,10 +1,74 @@
 # Une entrée par événement. Champs : date (AAAA-MM-JJ), heure, titre, type, lieu, description, lien.
-# « type » colore la carte : Assemblée générale, Rassemblement, Manifestation, Atelier, Projection...
-# Les événements passés basculent seuls dans la rubrique « Passé ».
+# « type » colore la carte : Assemblée générale, Rassemblement, Manifestation, Atelier, Projection, Université populaire.
+# Les événements passés restent affichés, grisés, dans le calendrier de leur mois.
+# Cours de l'université populaire : reprendre le planning publié (page Université populaire).
+
+# Semaine du 16 novembre 2026 : université populaire du campus des Grands Moulins
+
+- date: 2026-11-16
+  heure: "10h – 12h"
+  titre: "Atelier création de collages et écoute-découverte du punk"
+  type: Atelier
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Par Ariane Dudych. Apporter du matériel (carton, bristol, papiers récupérés, feutres, peinture), mis à la disposition du groupe."
+
+- date: 2026-11-16
+  heure: "14h30 – 16h30"
+  titre: "Faire l'image dans le cinéma documentaire"
+  type: Atelier
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Rencontre avec Karine Aulnette, cheffe opératrice, et discussion à partir d'extraits de films. Proposée par Caroline Zéau (master « Le Documentaire, écritures du monde contemporain », UFR LAC)."
+
+- date: 2026-11-16
+  heure: "18h – 20h"
+  titre: "Agrochimie et Omnibus européen sur les pesticides : « Leurs Champs du Cœur »"
+  type: Projection
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Projection du documentaire et discussion sur les mobilisations contre l'Omnibus pesticides. Par Camille Domps et Henri Engel (Atelier Paysan)."
+
+- date: 2026-11-17
+  titre: "Grève interprofessionnelle"
+  type: Manifestation
+  description: "Pas de cours de l'université populaire ce jour-là."
+
+- date: 2026-11-18
+  heure: "10h – 12h"
+  titre: "Évolution des équipes de recherche : du mépris de l'intelligence collective à l'effondrement de l'intégrité scientifique"
+  type: Atelier
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Par Sophie Vriz, généticienne."
+
+- date: 2026-11-18
+  heure: "10h – 12h"
+  titre: "Comment donner la parole à toutes et tous et éviter la reproduction des rapports de domination dans les mouvements sociaux"
+  type: Atelier
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Par des enseignantes, enseignants, étudiantes et étudiants de sociologie."
+
+- date: 2026-11-18
+  heure: "13h30 – 15h30"
+  titre: "Néolibéralisation de l'école, mise en concurrence et sélectivité dans les études"
+  type: Atelier
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Atelier collaboratif. Par Margaux Trarieux, Marine Pochon et Elise Ricadat (IHSS)."
+
+- date: 2026-11-18
+  heure: "14h – 16h"
+  titre: "Quelle université voulons-nous face aux enjeux écologiques ?"
+  type: Atelier
+  lieu: "Maison des Rêves et des Colères, 12 rue Léo Frankel, Paris 13e"
+  description: "Savoirs, recherches, pédagogies et modes de fonctionnement à privilégier. Espace d'échange horizontal avec Marie-Anne Dujarier (IHSS) et Mateo Barsuglia (laboratoire Astroparticule et Cosmologie)."
+
+- date: 2026-11-18
+  heure: "18h – 20h"
+  titre: "« Les Lascars du LEP »"
+  type: Projection
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Projection et discussion. Proposée par le Collectif 1871 (ciné-club militant)."
 
 - date: 2026-11-19
   heure: "10h – 12h"
-  titre: "Les indignés à la grève générale pour le logement : retour sur 15 ans de mobilisation en Espagne"
+  titre: "Des indignés à la grève générale pour le logement : retours sur 15 ans de mobilisations en Espagne"
   type: Atelier
   lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
   description: "Par Héloïse Nez."
@@ -14,7 +78,7 @@
   titre: "Coloriage secret, ou comment convaincre sans expliquer"
   type: Atelier
   lieu: "Maison des Rêves et des Colères, 12 rue Léo Frankel, Paris 13e"
-  description: "Par Emilie Larroque."
+  description: "Initiation à la cryptographie, sans ordinateur. Par Émile Larroque, doctorant en informatique théorique."
 
 - date: 2026-11-19
   heure: "18h30"
@@ -24,7 +88,35 @@
   description: "Présentée et discutée par Eric Dufour. Proposée par l'association Cinésept."
 
 - date: 2026-11-20
+  heure: "10h – 12h"
+  titre: "À l'écoute de l'université : le développement des détecteurs d'ondes gravitationnelles"
+  type: Atelier
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Par Pauline Durand-Smet et Eleonora Capocasa."
+
+- date: 2026-11-20
   heure: "12h"
   titre: "Assemblée générale"
   type: Assemblée générale
   lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+
+- date: 2026-11-20
+  heure: "14h – 16h"
+  titre: "Repenser la pédagogie à l'université : pédagogies critiques, féministes et antiracistes"
+  type: Atelier
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Arpentage de livres (bell hooks, Paulo Freire…) et discussion entre enseignants et étudiants. Par Louise Virole, Claire Cossée, Vincent Gay et d'autres enseignants de sociologie et d'anthropologie."
+
+- date: 2026-11-20
+  heure: "16h – 18h"
+  titre: "Faire des maths à l'heure de l'IA"
+  type: Atelier
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Exposé tout public sur la façon dont l'IA générative transforme le métier de mathématicien. Par Xavier Blanc et Isabelle Gallagher."
+
+- date: 2026-11-20
+  heure: "18h30 – 20h30"
+  titre: "« Possible Love »"
+  type: Projection
+  lieu: "Gymnase Sophie Germain, 21 rue Watt, Paris 13e"
+  description: "Film coréen sur la grève, la lutte et la honte des classes, précédé d'une présentation du cinéma coréen récent. Cuisine coréenne à l'entracte. Par des étudiantes et étudiants en cinéma et en coréen."
