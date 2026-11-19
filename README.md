@@ -32,7 +32,7 @@ numero: 2
 ```
 
 2. Rédiger le texte en Markdown sous l'en-tête et enregistrer : le numéro paraît sur le site, page Ressources.
-3. Dans Brevo, **Campagnes > Créer une campagne > E-mail**, destinataires : liste « Abonnés lettre ». Reprendre le texte ou un résumé avec un lien vers le numéro en ligne.
+3. Dans Brevo, **Campagnes > Créer une campagne > E-mail**, destinataires : liste « Abonnés lettre ». Pour le contenu, choisir **Vos templates > Modèle lettre Paris 7 En lutte**, puis remplacer dans le code les textes d'exemple (numéro, date, titre, accroche, texte, rendez-vous) par ceux du numéro.
 4. Dans les réglages de la campagne, désactiver le suivi des ouvertures et des clics (engagement pris sur la page Données personnelles).
 5. S'envoyer un test, puis programmer ou envoyer. Le lien de désinscription est ajouté par Brevo.
 
