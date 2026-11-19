@@ -1,36 +1,49 @@
-# Lettre d'information hors réseaux sociaux
+# Paris 7 En lutte
 
 Site : https://paris7enlutte.github.io/
 Contact : mob2026paris7@gmail.com
 
-Outil gratuit, sans serveur : un fichier Markdown déposé dans `_posts/` s'affiche sur le site (GitHub Pages) et part par courriel aux abonnés (GitHub Actions). Chaque abonné reçoit un courriel individuel, avec lien de désinscription et sans traceur.
+Site gratuit et sans serveur, publié par GitHub Pages. Chaque fichier enregistré dans ce dépôt met le site à jour en une à deux minutes. La lettre d'information part par Brevo, depuis le compte du collectif.
 
-## Écrire une lettre
+## Où modifier quoi
 
-1. Dans `_posts/`, créez `AAAA-MM-JJ-titre-court.md` (bouton **Add file > Create new file**).
-2. Commencez par cet en-tête, puis rédigez en Markdown :
+| Rubrique | Fichier |
+|---|---|
+| Agenda | `_data/agenda.yml` |
+| Communiqués | `_data/publications.yml` |
+| Université populaire (lieux, formulaire, planning) | `_data/universite_populaire.yml` |
+| Réseaux sociaux (page À propos) | `_data/reseaux.yml` |
+| Galerie photo | `_data/galerie.yml` + photos dans `assets/galerie/` |
+| Numéros de la lettre (page Ressources) | `_posts/` |
+| Titre, description, courriel de contact, formulaire Brevo | `_config.yml` |
+
+Sur GitHub : ouvrir le fichier, cliquer sur le crayon, modifier, puis **Commit changes**. Les fichiers `.yml` sont sensibles aux espaces en début de ligne : recopier la forme d'une entrée existante.
+
+## Publier un numéro de la lettre
+
+1. Dans `_posts/`, créer `AAAA-MM-JJ-titre-court.md` (**Add file > Create new file**), avec cet en-tête :
 
 ```
 ---
-title: "Titre de la lettre (objet du courriel)"
+title: "Titre de la lettre"
 chapo: "Phrase d'accroche facultative."
 numero: 2
-envoyer: false
 ---
 ```
 
-3. Avec `envoyer: false`, la lettre paraît sur le site sans être envoyée.
-4. Test : **Actions > Envoi de la lettre > Run workflow**, chemin du fichier, mode `test`. Vous seul la recevez.
-5. Envoi : passez à `envoyer: true` et enregistrez. Une correction ultérieure ne la renvoie pas.
+2. Rédiger le texte en Markdown sous l'en-tête et enregistrer : le numéro paraît sur le site, page Ressources.
+3. Dans Brevo, **Campagnes > Créer une campagne > E-mail**, destinataires : liste « Abonnés lettre ». Reprendre le texte ou un résumé avec un lien vers le numéro en ligne.
+4. Dans les réglages de la campagne, désactiver le suivi des ouvertures et des clics (engagement pris sur la page Données personnelles).
+5. S'envoyer un test, puis programmer ou envoyer. Le lien de désinscription est ajouté par Brevo.
 
-## Gérer les abonnés
+## Abonnés
 
-**Settings > Secrets and variables > Actions**, secret `ABONNES` : une adresse par ligne. GitHub ne réaffiche pas un secret ; gardez la liste de référence sur votre ordinateur et recollez-la entière à chaque modification.
-
-## Secrets nécessaires
-
-`SMTP_HOTE`, `SMTP_PORT`, `SMTP_UTILISATEUR`, `SMTP_MOT_DE_PASSE`, `EXPEDITEUR`, `NOM_EXPEDITEUR`, `ABONNES`.
+La liste « Abonnés lettre » se gère dans Brevo (**Contacts**). Les inscriptions arrivent par le formulaire de la page À propos ou par le QR code, avec double confirmation par courriel. L'offre gratuite de Brevo permet 300 courriels par jour.
 
 ## Markdown
 
 `## Intertitre` · `**gras**` · `*italique*` · `[lien](https://...)` · `- puce` · `> citation` · `![image](/assets/photo.jpg)`
+
+## Prévisualiser sur un ordinateur (facultatif)
+
+`bundle install`, puis `bundle exec jekyll serve`. GitHub Pages n'en a pas besoin.
