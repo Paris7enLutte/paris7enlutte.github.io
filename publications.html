@@ -5,7 +5,9 @@ permalink: /communiques/
 theme: bleu
 ---
 <h1>Communiqués</h1>
-<p>Communiqués, prises de position et revues de presse. Les entrées se complètent dans le fichier <code>_data/publications.yml</code>.</p>
+<p>Communiqués, prises de position et revues de presse de la communauté mobilisée.</p>
+{% assign pubs = site.data.publications %}
+{% if pubs and pubs.size > 0 %}
 
 {% assign natures = site.data.publications | map: "nature" | uniq | sort %}
 <div class="filtres" role="group" aria-label="Filtrer par nature">
@@ -25,6 +27,9 @@ theme: bleu
 {% endfor %}
 </div>
 <p class="compteur"><span id="nb">{{ pubs.size }}</span> document(s)</p>
+{% else %}
+<p class="galerie-vide">Les premiers communiqués seront publiés ici. Pour les recevoir dès leur parution : <a href="{{ '/a-propos/' | relative_url }}#inscription">s'abonner à la lettre</a>.</p>
+{% endif %}
 
 <script>
   document.querySelectorAll('.filtre').forEach(function (b) {
