@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {% seo %}
   {% feed_meta %}
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="icon" type="image/png" href="{{ '/assets/favicon-32.png' | relative_url }}" sizes="32x32">
+  <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
+  <meta name="theme-color" content="#800040">
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body class="theme-{{ page.theme | default: 'papier' }} grain">
@@ -23,7 +27,7 @@
     {{ content }}
   </main>
   <footer class="pied">
-    <p>{{ site.author }} · <a href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a> · <a href="{{ '/a-propos/' | relative_url }}#inscription">S'abonner</a> · <a href="{{ '/confidentialite/' | relative_url }}">Données personnelles</a> · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
+    <p>{{ site.author }} · <a href="mailto:{{ site.email_contact }}">{{ site.email_contact }}</a> · <a href="{{ '/a-propos/' | relative_url }}#inscription">S'abonner</a> · <a href="{{ '/confidentialite/' | relative_url }}">Mentions légales</a> · <a href="{{ '/feed.xml' | relative_url }}">RSS</a></p>
   </footer>
 </body>
 </html>
